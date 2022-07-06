@@ -1,9 +1,9 @@
-import Login from "components/login";
+import Login from "components/Login";
 import { useEffect, useState } from "react";
 import { fetchMe } from "api/authorization";
-import Register from "components/register";
+import Register from "components/Register";
 import { Route, Routes } from "react-router-dom";
-import PostList from "components/postList";
+import PostList from "components/PostList";
 export default function App() {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
@@ -26,9 +26,9 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path={"/login"} element={<Login setToken={setToken} />} />
-        <Route path={"/register"} element={<Register setToken={setToken} />} />
-        <Route path={"/postList"} element={<PostList />} />
+        <Route path={"/Login"} element={<Login setToken={setToken} />} />
+        <Route path={"/Register"} element={<Register setToken={setToken} />} />
+        <Route path={"/Posts"} element={<PostList />} />
       </Routes>
       {currentUser?.username ? <h3>{currentUser.username}</h3> : null}
     </>

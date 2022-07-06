@@ -1,4 +1,4 @@
-export { default as login } from "./login";
-export { default as profile } from "./profile";
-export { default as posts } from "./posts";
+export { default as login } from "./Login";
+export { default as profile } from "./Profile";
+export { default as Post } from "./Post";
 export { default as NavBar } from "./NavBar";
