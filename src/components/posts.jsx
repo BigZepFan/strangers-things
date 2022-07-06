@@ -2,7 +2,7 @@ import React from "react";
 
 import { useNavigate } from "react-router-dom";
 
-export default function posts({ post }) {
+export default function Post({ post }) {
   console.log(post);
   const navigate = useNavigate();
 
@@ -13,10 +13,10 @@ export default function posts({ post }) {
       }}
     >
       <ul>
-        <li>Title: {post.title} </li>
-        <li>Description: {post.description} </li>
-        <li>Price: {post.price} </li>
-        <li>Location {post.location} </li>
+        <li>Title: {post.Title} </li>
+        <li>Description: {post.Description} </li>
+        <li>Price: {post.Price} </li>
+        <li>Location: {post.Location} </li>
       </ul>
     </div>
   );

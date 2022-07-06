@@ -1,5 +1,4 @@
-const url =
-  "https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT/posts";
+const url = "https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT";
 
 export const fetchAllPosts = async () => {
   const response = await fetch(`${url}/api/posts`);

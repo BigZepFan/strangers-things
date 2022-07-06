@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CreatePost from "./CreatePost";
 import { fetchAllPosts } from "api/post";
+import Post from "./posts";
 
 const dummyPosts = [
   {
@@ -23,21 +24,24 @@ const dummyPosts = [
   },
 ];
 
-export default function CreatePost() {
+export default function PostList() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const getAllThePosts = async () => {
-      const result = await fetchAllPosts();
-      setPosts(result);
-    };
-    getAllThePosts;
+    // const getAllThePosts = async () => {
+    //   const result = await fetchAllPosts();
+    //   setPosts(result);
+    // };
+    // getAllThePosts;
+
+    setPosts(dummyPosts);
   }, []);
 
   return (
     <div>
       {posts.map((post, index) => {
-        return <post key={`Key: ${index}`} dog={dog} />;
+        // return <post key={`Key: ${index}`} dog={dog} />;
+        return <Post post={post} />;
       })}
     </div>
   );

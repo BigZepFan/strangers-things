@@ -1,12 +1,13 @@
 import Register from "components/register";
 
-const url = "https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT/";
+const url = "https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT";
 
 export const registerUser = async (username, password) => {
+  console.log(username, password);
   const response = await fetch(`${url}/users/register`, {
     method: "POST",
     headers: {
-      "Content-Type": "applications/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       user: {

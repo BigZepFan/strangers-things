@@ -54,6 +54,7 @@ export default function Register({ setToken }) {
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await registerUser(username, password);
+          console.log(result);
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
           setPassword("");
