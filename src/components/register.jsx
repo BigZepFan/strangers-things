@@ -49,7 +49,7 @@ export default function Register({ setToken }) {
 
   return (
     <div>
-      <h4>Register:</h4>
+      <h4>Try Register:</h4>
       <form
         onSubmit={async (e) => {
           e.preventDefault();

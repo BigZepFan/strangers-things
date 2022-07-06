@@ -1,8 +1,7 @@
-import register from "components/register";
 import Login from "components/login";
 import { useEffect, useState } from "react";
 import { fetchMe } from "api/authorization";
-import Register from "components/login";
+import Register from "components/register";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -25,6 +24,7 @@ export default function App() {
 
   return (
     <>
+      {currentUser?.username ? <h3>{currentUser.username}</h3> : null}
       <Register setToken={setToken} />
       <Login setToken={setToken} />
     </>
