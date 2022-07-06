@@ -1,4 +1,4 @@
-import Register from "components/login";
+import Register from "components/register";
 
 const url = "https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT/";
 

@@ -1,18 +1,23 @@
-// import React, {useState, useEffect} from "react";
-// import {fetchAllPosts} from "api/authorization";
+import React from "react";
 
-// const trialPost = []
-// fetch('https://strangers-things.herokuapp.com/api/2206-FTB-MT-WEB-FT/profile, {
-//   headers : {
-//     'content-type': 'application/json'
-//     'Authorization': 'Bearer TOKEN_STRING_HERE'
-//   },
-// }).then(response => response.json())
-//   .then(result => {
-//     console.log(result);
-//   })
-// .catch(console.error);
+import { useNavigate } from "react-router-dom";
 
-// export default function posts() {
-//   return <div>Posts</div>;
-// }
+export default function posts({ post }) {
+  console.log(post);
+  const navigate = useNavigate();
+
+  return (
+    <div
+      onClick={() => {
+        navigate(`posts/${post.id}`);
+      }}
+    >
+      <ul>
+        <li>Title: {post.title} </li>
+        <li>Description: {post.description} </li>
+        <li>Price: {post.price} </li>
+        <li>Location {post.location} </li>
+      </ul>
+    </div>
+  );
+}
