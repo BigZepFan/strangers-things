@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 export default function NavBar({ profile }) {
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/posts">Posts</Link>
-      <Link to="/profile">Profile</Link>
+      <Link to="/Home">Home</Link>
+      <Link to="/Login">Login</Link>
+      <Link to="/Post">Post</Link>
+      <Link to="/Profile">Profile</Link>
     </nav>
   );
 }
