@@ -3,7 +3,7 @@ import CreatePost from "./CreatePost";
 
 import { useNavigate } from "react-router-dom";
 
-export default function Post({ post }) {
+export default function Post({ post, currentUser }) {
   console.log(post);
   const navigate = useNavigate();
 
@@ -28,6 +28,7 @@ export default function Post({ post }) {
        * TERNARY OPERATORS:
        *  someValue ? <thiswillhappeniftrue /> : thisiffalse
        */}
+      {currentUser._id === post.author._id ? <button>delete</button> : null}
     </div>
   );
 }

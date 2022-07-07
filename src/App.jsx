@@ -4,6 +4,8 @@ import { fetchMe } from "api/authorization";
 import Register from "components/Register";
 import { Route, Routes } from "react-router-dom";
 import PostList from "components/PostList";
+import CreatePost from "components/CreatePost";
+import { createPost } from "api/post";
 export default function App() {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
@@ -28,7 +30,11 @@ export default function App() {
       <Routes>
         <Route path={"/Login"} element={<Login setToken={setToken} />} />
         <Route path={"/Register"} element={<Register setToken={setToken} />} />
-        <Route path={"/Posts"} element={<PostList />} />
+        <Route
+          path={"/Posts"}
+          element={<PostList currentUser={currentUser} />}
+        />
+        <Route path={"/CreatePost"} element={<CreatePost token={token} />} />
       </Routes>
       {currentUser?.username ? <h3>{currentUser.username}</h3> : null}
     </>

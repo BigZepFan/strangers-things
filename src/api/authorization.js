@@ -24,7 +24,7 @@ export const loginUser = async (username, password) => {
   const response = await fetch(`${url}/users/login`, {
     method: "POST",
     headers: {
-      "Content-Type": "applications/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       user: {
@@ -32,14 +32,10 @@ export const loginUser = async (username, password) => {
         password: password,
       },
     }),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    })
-    .catch(console.error);
-  // TESTING ↑
+  });
+
   const result = await response.json();
+  console.log(result);
   return result;
 };
 
