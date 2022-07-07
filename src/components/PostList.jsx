@@ -44,6 +44,8 @@ export default function PostList({ currentUser, token }) {
           <Post
             currentUser={currentUser}
             key={index}
+            setPosts={setPosts}
+            posts={posts}
             post={post}
             token={token}
           />

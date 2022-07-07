@@ -23,12 +23,26 @@ export const createPost = async (token, postObj) => {
   const result = await response.json();
   return result;
 };
-export const deletePost = async (id)=>{
-  const response = await fetch(`${url}/posts/${id}`);
-   method: "Delete",
-   headers: {
-    "Content-Type": "application/json",
-   Authorization: `Bearer ${token}`,}
-   const result = await response.json();
+export const deletePost = async (id, token) => {
+  const response = await fetch(`${url}/posts/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+export const editPost = async (token, postObj, postId) => {
+  const response = await fetch(`${url}/posts/${postId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ post: postObj }),
+  });
+  const result = await response.json();
   return result;
 };

@@ -1,17 +1,14 @@
 import React from "react";
 import CreatePost from "./CreatePost";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { deletePost } from "api/post";
 
-export default function Post({ post, currentUser, token }) {
+export default function Post({ post, currentUser, token, posts, setPosts }) {
   console.log(post);
   const navigate = useNavigate();
 
   return (
-    <div
-      onClick={() => {
-        navigate(`${post._id}`);
-      }}
-    >
+    <div>
       Hello from posts
       <ul>
         <li>Title: {post.title} </li>
@@ -27,9 +24,37 @@ export default function Post({ post, currentUser, token }) {
        * TERNARY OPERATORS:
        *  someValue ? <thiswillhappeniftrue /> : thisiffalse
        */}
-      {currentUser._id === post.author._id ? <button onCLick={()=>
-      }> delete </button> : null}
+      {currentUser._id === post.author._id ? (
+        <div>
+          {" "}
+          <button
+            onClick={async () => {
+              await deletePost(post._id, token);
+              const filteredPosts = posts.filter((singlePost) => {
+                if (post._id === singlePost._id) {
+                  return false;
+                } else {
+                  return true;
+                }
+              });
+              setPosts(filteredPosts);
+              // fire your delete post API function (make sure you pass it the correct args)
+              // if the post isnt deteled from your application
+              // 1. Pass posts and setPosts into this component
+              // 2. Filter through your posts with posts.filter()
+              // if the post your at has an id that matches the post you have deleted,
+              //  remove it with your filter method
+              // 3. setPosts(filteredPosts)
 
+              //posts = { posts }, setPosts = { setPosts }
+            }}
+          >
+            {" "}
+            delete{" "}
+          </button>
+          <Link to={`/posts/${post._id}/edit`}>Edit</Link>{" "}
+        </div>
+      ) : null}
     </div>
   );
 }

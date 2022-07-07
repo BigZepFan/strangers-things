@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import PostList from "components/PostList";
 import CreatePost from "components/CreatePost";
 import { createPost } from "api/post";
+import EditPost from "components/Edit";
 export default function App() {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
@@ -35,6 +36,10 @@ export default function App() {
           element={<PostList currentUser={currentUser} token={token} />}
         />
         <Route path={"/CreatePost"} element={<CreatePost token={token} />} />
+        <Route
+          path={"/posts/:postId/edit"}
+          element={<EditPost token={token} />}
+        />
       </Routes>
       {currentUser?.username ? <h3>{currentUser.username}</h3> : null}
     </>
