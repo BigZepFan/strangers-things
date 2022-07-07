@@ -32,7 +32,7 @@ export default function App() {
         <Route path={"/Register"} element={<Register setToken={setToken} />} />
         <Route
           path={"/Posts"}
-          element={<PostList currentUser={currentUser} />}
+          element={<PostList currentUser={currentUser} token={token} />}
         />
         <Route path={"/CreatePost"} element={<CreatePost token={token} />} />
       </Routes>

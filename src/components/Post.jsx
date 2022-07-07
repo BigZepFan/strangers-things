@@ -1,9 +1,8 @@
 import React from "react";
 import CreatePost from "./CreatePost";
-
 import { useNavigate } from "react-router-dom";
 
-export default function Post({ post, currentUser }) {
+export default function Post({ post, currentUser, token }) {
   console.log(post);
   const navigate = useNavigate();
 
@@ -28,7 +27,9 @@ export default function Post({ post, currentUser }) {
        * TERNARY OPERATORS:
        *  someValue ? <thiswillhappeniftrue /> : thisiffalse
        */}
-      {currentUser._id === post.author._id ? <button>delete</button> : null}
+      {currentUser._id === post.author._id ? <button onCLick={()=>
+      }> delete </button> : null}
+
     </div>
   );
 }

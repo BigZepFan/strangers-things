@@ -24,7 +24,7 @@ const dummyPosts = [
   },
 ];
 
-export default function PostList({ currentUser }) {
+export default function PostList({ currentUser, token }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,14 @@ export default function PostList({ currentUser }) {
     <div>
       {posts.map((post, index) => {
         // return <post key={`Key: ${index}`} dog={dog} />;
-        return <Post currentUser={currentUser} key={index} post={post} />;
+        return (
+          <Post
+            currentUser={currentUser}
+            key={index}
+            post={post}
+            token={token}
+          />
+        );
       })}
     </div>
   );
