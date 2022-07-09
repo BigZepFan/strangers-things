@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <form>
-        <h1>My Profile</h1>
+        <h1>Strangers-Things</h1>
       </form>
     </div>
   );

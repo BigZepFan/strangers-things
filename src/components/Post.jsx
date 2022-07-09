@@ -21,23 +21,23 @@ export default function Post({ post, currentUser, token, posts, setPosts }) {
           <li>Location: {post.location} </li>
         </ul>
         <input
-          placeholder="type message"
+          placeholder="Message here:"
           value={messageContent}
           onChange={(e) => setMessageContent(e.target.value)}
         />
         <button
           onClick={async () => {
             await sendMessage(post._id, token, messageContent);
-            // const filteredPosts = posts.filter((singlePost) => {
-            //   if (post._id === singlePost._id) {
-            //     return false;
-            //   } else {
-            //     return true;
-            //   }
-            // });
+            const filteredPosts = posts.filter((singlePost) => {
+              // // if (post._id === singlePost._id) {
+              // //   return false;
+              // // } else {
+              // //   return true;
+              // }
+            });
           }}
         >
-          send message
+          Send Message
         </button>
         {/**
        * If the current user's _id === post.author._id then you can render a

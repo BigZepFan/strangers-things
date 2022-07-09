@@ -6,8 +6,8 @@ import { Home, NavBar } from "components";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Home />
     <NavBar />
+    {/* <Home /> */}
     <App />
   </BrowserRouter>
 );

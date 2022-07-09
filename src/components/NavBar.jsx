@@ -6,8 +6,8 @@ export default function NavBar({ profile }) {
     <nav>
       <Link to="/Home">Home</Link>
       <Link to="/Login">Login</Link>
-      <Link to="/Post">Post</Link>
-      <Link to="/Profile">Profile</Link>
+      <Link to="/Register">Register</Link>
+      <Link to="/Posts">Posts</Link>
     </nav>
   );
 }
