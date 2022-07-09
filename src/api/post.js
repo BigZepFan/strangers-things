@@ -46,3 +46,16 @@ export const editPost = async (token, postObj, postId) => {
   const result = await response.json();
   return result;
 };
+export const sendMessage = async (postId, token, content) => {
+  const response = await fetch(`${url}/posts/${postId}/messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ message: { content: content } }),
+  });
+
+  const result = await response.json();
+  return result;
+};

@@ -7,6 +7,7 @@ import PostList from "components/PostList";
 import CreatePost from "components/CreatePost";
 import { createPost } from "api/post";
 import EditPost from "components/Edit";
+import Home from "components/Home";
 export default function App() {
   const [token, setToken] = useState("");
   const [currentUser, setCurrentUser] = useState({});
@@ -29,6 +30,7 @@ export default function App() {
   return (
     <>
       <Routes>
+        <Route path={"/Home"} element={<Home />} />
         <Route path={"/Login"} element={<Login setToken={setToken} />} />
         <Route path={"/Register"} element={<Register setToken={setToken} />} />
         <Route
@@ -45,3 +47,5 @@ export default function App() {
     </>
   );
 }
+
+/// send mesages and view messages// look at docs for sample calls/
