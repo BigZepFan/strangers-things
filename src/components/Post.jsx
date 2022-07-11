@@ -13,7 +13,7 @@ export default function Post({ post, currentUser, token, posts, setPosts }) {
   return (
     <div>
       <form>
-        Hello from posts
+        Posts:
         <ul>
           <li>Title: {post.title} </li>
           <li>Description: {post.description} </li>
