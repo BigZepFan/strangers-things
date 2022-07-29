@@ -6,7 +6,7 @@ import Post from "./Post";
 const dummyPosts = [
   {
     Title: "98 Chevy",
-    Description: "Piece of shit runs terrible",
+    Description: "Piece of trash runs terrible",
     Price: 800,
     Location: "Utah",
   },
